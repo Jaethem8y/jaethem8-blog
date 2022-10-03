@@ -18,13 +18,13 @@ public class GetController {
     private final BlogService blogService;
 
     @CrossOrigin
-    @GetMapping("/blogPost")
+    @GetMapping("/")
     public List<BlogPostDTO> getBlogPosts() {
         return blogService.getAllBlogPost();
     }
 
     @CrossOrigin
-    @GetMapping("/blogPost/{title}")
+    @GetMapping("/{title}")
     public BlogPostDTO getBlogPostByTitle(@PathVariable String title) throws Exception {
         return blogService.getBlogPostByTitle(title);
     }
